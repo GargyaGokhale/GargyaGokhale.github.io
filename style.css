@@ -57,14 +57,13 @@ footer {
     display: flex;
     flex-direction: column; /* Adjust the flex direction to column */
     align-items: center;
-    margin-left: 20px;
 }
 
 .about-me {
     flex: 1;
     display: flex;
     align-items: center;
-    text-align: justify;
+    margin-bottom: 20px; /* Add margin to create space between sections */
 }
 
 .about-me img {
@@ -74,13 +73,14 @@ footer {
 }
 
 .description {
-    margin-top: 20px;
+    max-width: 50vw; /* Adjust the maximum width as needed */
+    text-align: justify;
 }
 
 .publications {
     flex: 1;
+    max-width: 50vw; /* Adjust the maximum width as needed */
     text-align: justify;
-    max-width: 50vw;
 }
 
 .publications ul {
