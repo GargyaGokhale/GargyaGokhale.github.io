@@ -113,6 +113,7 @@ footer {
 /* ------------------------------- Profile --------------------------------- */
 .picture-section {
     margin-left: 3em;
+    text-align: left;
 }
   
 .profile-image img {
