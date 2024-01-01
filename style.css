@@ -12,6 +12,12 @@ header {
     text-align: center;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav {
     float: right;
 }
@@ -57,7 +63,7 @@ footer {
 
 .about-me img {
     max-width: 15%;
-    border-radius: 50%;
+    border-radius: 12px;
 }
 
 .description {
