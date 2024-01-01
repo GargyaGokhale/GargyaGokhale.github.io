@@ -6,6 +6,22 @@ body {
     margin-left: 5%;
 }
 
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
 header {
     background-color: #fff;
     color: #1b184f;
@@ -19,11 +35,6 @@ header {
     align-items: center;
 }
 
-.web-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 nav {
     float: right;
@@ -60,42 +71,52 @@ footer {
     width: 100%;
 }
 
-#main {
+/* ------------------------------- CONTAINERS ------------------------------- */
+.main-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    max-width: 75vw; /* maximum width of the entire content */
+    margin: 0 auto;
+    padding-top: 2rem; /* padding between the navbar and main sections */
+  }
+  
+  /* Picture and socials together */
+  .picture-section {
+    flex: 1; /* take up 1/3 of the screen */
+    height: 100vh; /* add space between the sidebar and content */
+    position: sticky; /* keep the headshot section in view when scrolling */
+    top: 0;
+    bottom: 0;
+  }
+  
+  /* remaining sections take up 67% of the screen */
+  .content-section {
+    flex: 2;
+  }
+  
+  /* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
+   stack the columns on top of each other */
+  @media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* stack columns on top of each other */
+    }
+  
+    /* disable sticky scrolling for mobile */
+    .picture-section{
+      height: auto;
+      position: static;
+      top: initial;
+      bottom: initial;
+    }
+    .content-section {
+        flex: auto;
+        border: none;
+        position: relative;
+        top: initial;
+        padding-top: 20px; /* add some space between columns */
+    }
+  }
 
-.about-me {
-    flex: 1;
-    align-items: center;
-    margin-bottom: 20px; /* Add margin to create space between sections */
-}
-
-.about-me img {
-    max-width: 15%;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.publications {
-
-    max-width: 50vw; /* Adjust the maximum width as needed */
-    text-align: justify;
-}
-
-.publications ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-}
-
-.description {
-    margin-left: 10px; /* Adjust the margin as needed */
-    text-align: justify; /* Add this line to justify the text */
-    max-width: 50vw;
-}
-
+/* ------------------------------- Icons ------------------------------- */
 .icon-row {
     display: flex;
     gap: 10px;
