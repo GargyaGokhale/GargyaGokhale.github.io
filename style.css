@@ -19,6 +19,12 @@ header {
     align-items: center;
 }
 
+.web-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav {
     float: right;
 }
@@ -60,7 +66,7 @@ footer {
 }
 
 .about-me {
-    flex: 2;
+    flex: 1;
     align-items: center;
     margin-bottom: 20px; /* Add margin to create space between sections */
 }
@@ -73,7 +79,7 @@ footer {
 }
 
 .publications {
-    flex: 2;
+    flex: 1;
     max-width: 50vw; /* Adjust the maximum width as needed */
     text-align: justify;
 }
