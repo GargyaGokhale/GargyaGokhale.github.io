@@ -75,6 +75,7 @@ footer {
 
 .publications {
     flex: 1;
+    display: flex;
     max-width: 50vw; /* Adjust the maximum width as needed */
     text-align: justify;
 }
