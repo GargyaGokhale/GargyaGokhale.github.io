@@ -60,7 +60,7 @@ nav a {
 footer {
     background-color: #fff;
     color: #1b184f;
-    height: 0.5rem;
+    height: 100vh;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -79,7 +79,6 @@ footer {
 /* Picture and socials together */
 .picture-section {
     flex: 1; /* take up 1/3 of the screen */
-    height: 100vh; /* add space between the sidebar and content */
     position: sticky; /* keep the headshot section in view when scrolling */
     top: 0;
     bottom: 0;
