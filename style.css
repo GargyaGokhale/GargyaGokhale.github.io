@@ -87,7 +87,7 @@ footer {
   /* remaining sections take up 67% of the screen */
 .content-section {
     flex: 2;
-    padding-top: 2.5rem;
+    padding-top: 0.0rem;
 }
   
 /* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
