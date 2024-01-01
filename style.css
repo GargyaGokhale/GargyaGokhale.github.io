@@ -1,4 +1,69 @@
-/* ... (previous styles) ... */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #fff;
+    color: #1b184f;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1b184f;
+    font-weight: bold;
+}
+
+/* Additional styling for navigation buttons */
+nav a:hover {
+    color: #aaa9a9;
+    /* Add any other styling as needed */
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #fff;
+    color: #1b184f;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#main {
+    display: flex;
+    flex-direction: column; /* Adjust the flex direction to column */
+    align-items: center;
+}
 
 .about-me {
     flex: 1;
@@ -14,9 +79,9 @@
 }
 
 .description {
+    max-width: 50vw; /* Adjust the maximum width as needed */
+    text-align: justify;
     margin-left: 20px; /* Adjust the margin as needed */
-    text-align: justify; /* Add this line to justify the text */
-    max-width: 50vw;
 }
 
 .publications {
@@ -41,8 +106,3 @@
     text-decoration: none;
 }
 
-/* Additional styling for navigation buttons */
-nav a:hover {
-    color: #555;
-    /* Add any other styling as needed */
-}
