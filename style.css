@@ -86,7 +86,7 @@ footer {
   /* remaining sections take up 67% of the screen */
 .content-section {
     flex: 2;
-    padding-top: 0.25rem;
+    padding-top: 0.5rem;
 }
   
 /* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
@@ -113,7 +113,7 @@ footer {
 
 /* ------------------------------- Profile --------------------------------- */
 .picture-section {
-    margin-left: 1em;
+    margin-left: 0.5em;
     text-align: left;
 }
   
@@ -129,7 +129,7 @@ footer {
 }
   
 .social-links {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
   
 /* ------------------------------- Icons ------------------------------- */
