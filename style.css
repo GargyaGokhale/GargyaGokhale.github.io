@@ -53,6 +53,12 @@ footer {
     width: 100%;
 }
 
+#main {
+    display: flex;
+    flex-direction: column; /* Adjust the flex direction to column */
+    align-items: center;
+}
+
 .about-me {
     flex: 1;
     display: flex;
@@ -63,6 +69,7 @@ footer {
 .about-me img {
     max-width: 15%;
     border-radius: 1px;
+    margin-right: 20px;
 }
 
 .description {
