@@ -87,6 +87,7 @@ footer {
 }
 
 .description {
+    margin-left: 10px; /* Adjust the margin as needed */
     text-align: justify; /* Add this line to justify the text */
     max-width: 50vw;
 }
