@@ -65,6 +65,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    line-height: 0.5rem;
 }
 
 /* ------------------------------- CONTAINERS ------------------------------- */
@@ -86,6 +87,7 @@ footer {
   /* remaining sections take up 67% of the screen */
 .content-section {
     flex: 2;
+    padding-top: 2rem;
 }
   
 /* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
