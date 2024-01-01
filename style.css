@@ -57,6 +57,7 @@ footer {
     display: flex;
     flex-direction: column; /* Adjust the flex direction to column */
     align-items: center;
+    margin-left: 20px;
 }
 
 .about-me {
@@ -85,10 +86,21 @@ footer {
 .publications ul {
     list-style-type: none;
     padding: 0;
+    text-align: left;
 }
 
 .description {
     margin-left: 20px; /* Adjust the margin as needed */
     text-align: justify; /* Add this line to justify the text */
     max-width: 50vw;
+}
+
+.icon-row {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-row a {
+    color: #333;
+    text-decoration: none;
 }
