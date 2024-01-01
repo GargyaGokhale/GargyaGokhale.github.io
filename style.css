@@ -72,14 +72,13 @@ footer {
 }
 
 .about-me img {
-    flex: 1;
     max-width: 15%;
     border-radius: 10px;
     margin-right: 20px;
 }
 
 .publications {
-    flex: 1;
+
     max-width: 50vw; /* Adjust the maximum width as needed */
     text-align: justify;
 }
