@@ -77,45 +77,66 @@ footer {
     max-width: 75vw; /* maximum width of the entire content */
     margin: 0 auto;
     padding-top: 2rem; /* padding between the navbar and main sections */
-  }
+}
   
-  /* Picture and socials together */
-  .picture-section {
+/* Picture and socials together */
+.picture-section {
     flex: 1; /* take up 1/3 of the screen */
     height: 100vh; /* add space between the sidebar and content */
     position: sticky; /* keep the headshot section in view when scrolling */
     top: 0;
     bottom: 0;
-  }
+}
   
   /* remaining sections take up 67% of the screen */
-  .content-section {
+.content-section {
     flex: 2;
-  }
+}
   
-  /* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
+/* when viewing on smaller screens p to 768px (typical tablet and mobile sizes),
    stack the columns on top of each other */
-  @media (max-width: 768px) {
-    .main-container {
+@media (max-width: 768px) {
+.main-container {
         flex-direction: column; /* stack columns on top of each other */
-    }
-  
-    /* disable sticky scrolling for mobile */
-    .picture-section{
+    }  
+/* disable sticky scrolling for mobile */
+.picture-section {
       height: auto;
       position: static;
       top: initial;
       bottom: initial;
     }
-    .content-section {
+.content-section {
         flex: auto;
         border: none;
         position: relative;
         top: initial;
         padding-top: 20px; /* add some space between columns */
     }
-  }
+}
 
+/* ------------------------------- Profile --------------------------------- */
+.picture-section {
+    margin-left: 3em;
+}
+  
+.profile-image img {
+    max-width: 20%; /* max-width is 80% of the width of headshot container */
+    object-fit: contain;
+}
+  
+.basic-info {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 3.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+  
+.social-links {
+    margin-left: 3.5rem;
+  }
+  
 /* ------------------------------- Icons ------------------------------- */
 .icon-row {
     display: flex;
