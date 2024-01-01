@@ -57,14 +57,10 @@ nav a {
     font-weight: bold;
 }
 
-section {
-    padding: 20px;
-}
-
 footer {
     background-color: #fff;
     color: #1b184f;
-    height: 10px;
+    height: 3px;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -124,18 +120,19 @@ footer {
 .profile-image img {
     max-width: 80%; /* max-width is 80% of the width of headshot container */
     object-fit: contain;
+    border-radius: 10px;
 }
   
 .basic-info {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 3.5rem;
+    margin-left: 3rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
   
 .social-links {
-    margin-left: 3.5rem;
+    margin-left: 3rem;
   }
   
 /* ------------------------------- Icons ------------------------------- */
