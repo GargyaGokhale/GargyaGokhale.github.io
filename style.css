@@ -39,12 +39,6 @@ nav a {
     font-weight: bold;
 }
 
-/* Additional styling for navigation buttons */
-nav a:hover {
-    color: #aaa9a9;
-    /* Add any other styling as needed */
-}
-
 section {
     padding: 20px;
 }
@@ -53,7 +47,7 @@ footer {
     background-color: #fff;
     color: #1b184f;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -102,7 +96,7 @@ footer {
 }
 
 .icon-row a {
-    color: #333;
+    color: rgb(82, 82, 84);
     text-decoration: none;
 }
 
