@@ -2,7 +2,7 @@
 citations.csv
 
 # Ignore publications folder
-publications/
+# publications/
 
 # Node modules
 node_modules/
