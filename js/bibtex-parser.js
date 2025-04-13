@@ -126,7 +126,18 @@ class BibtexParser {
                         publication.links[linkType] = linkUrl;
                     }
                 });
-            } else {
+            } 
+            // Handle url field (used in many BibTeX entries)
+            else if (fieldName === 'url') {
+                if (!publication.links) publication.links = {};
+                publication.links.url = fieldValue;
+                if (this.debug) console.log(`URL found: ${fieldValue}`);
+                
+                // If no journal or PDF link is specified yet, use this URL for those links as well
+                if (!publication.links.journal) publication.links.journal = fieldValue;
+                if (!publication.links.pdf) publication.links.pdf = fieldValue;
+            }
+            else {
                 publication[fieldName] = fieldValue;
             }
         });
