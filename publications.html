@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Gargya Gokhale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/publications.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">GG</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <main class="main-container">
+        <section class="content-section">
+            <h1>Publications</h1>
+            
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="journal">Journals</button>
+                <button class="filter-btn" data-filter="conference">Conferences</button>
+                <button class="filter-btn" data-filter="preprint">Preprints</button>
+            </div>
+            
+            <div class="publication-grid">
+                <!-- Publications will be loaded dynamically here -->
+                <div class="loading-indicator">
+                    <i class="fa fa-spinner fa-spin"></i> Loading publications...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 <a href="mailto:contact.gargyagokhale@gmail.com">Gargya Gokhale</a> </p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/bibtex-parser.js"></script>
+    <script src="js/publications-loader.js"></script>
+</body>
+</html>

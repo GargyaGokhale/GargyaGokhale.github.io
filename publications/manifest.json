@@ -1,0 +1,74 @@
+{
+  "publications": [
+    {
+      "folder": "2022_physics_informed_nn",
+      "id": "gokhale2022physics",
+      "featured": true
+    },
+    {
+      "folder": "2021_reinforcement_learning_ev",
+      "id": "gokhale2021reinforcement",
+      "featured": false
+    },
+    {
+      "folder": "2022_physq_framework",
+      "id": "gokhale2022physq",
+      "featured": true
+    },
+    {
+      "folder": "2023_real_world_rl",
+      "id": "gokhale2023realworld",
+      "featured": true
+    },
+    {
+      "folder": "2023_transfer_learning",
+      "id": "gokhale2023transfer",
+      "featured": false
+    },
+    {
+      "folder": "2024_mcts_control",
+      "id": "pavirani2024demand",
+      "featured": false
+    },
+    {
+      "folder": "2024_distill2explain",
+      "id": "gokhale2024eenergy",
+      "featured": true
+    },
+    {
+      "folder": "2024_homelabgym",
+      "id": "vanpuyvelde2024homelabgym",
+      "featured": false
+    },
+    {
+      "folder": "2024_sample_efficient_rl",
+      "id": "gokhale2024sample",
+      "featured": true
+    },
+    {
+      "folder": "2024_control_policy_conference",
+      "id": "karimimadahi2024control",
+      "featured": false
+    },
+    {
+      "folder": "2024_explainable_hems",
+      "id": "gokhale2024explainable",
+      "featured": true
+    },
+    {
+      "folder": "2024_multisource_transfer",
+      "id": "madahi2024multisource",
+      "featured": false
+    },
+    {
+      "folder": "2024_phd_thesis",
+      "id": "gokhale2024thesis",
+      "featured": true
+    },
+    {
+      "folder": "2024_deployable_control",
+      "id": "gokhale2024deployable",
+      "featured": false
+    }
+  ]
+}

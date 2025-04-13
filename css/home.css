@@ -1,0 +1,101 @@
+/* -------------------------------- Home Page Layout -------------------------------- */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  
+  .picture-section {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    height: fit-content;
+  }
+  
+  .content-section {
+    flex: 2;
+  }
+  
+  /* -------------------------------- Profile Section -------------------------------- */
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .profile-image img {
+    max-width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-image img:hover {
+    transform: scale(1.02);
+  }
+  
+  .basic-info {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .basic-info h1 {
+    margin: 0.5rem 0;
+  }
+  
+  .basic-info .title {
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .icon-row a {
+    color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .icon-row a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+  }
+  
+  /* -------------------------------- Content Cards -------------------------------- */
+  .section-card {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .section-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* -------------------------------- Responsive -------------------------------- */
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+    }
+    
+    .picture-section {
+      position: static;
+    }
+  }

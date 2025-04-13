@@ -1,0 +1,53 @@
+/* filepath: /Users/gargyagokhale/github/GargyaGokhale.github.io/css/blog.css */
+/* -------------------------------- Blog Page -------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  border-top: 4px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+  color: var(--primary-color);
+}
+
+.blog-date {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+}
+
+.blog-preview {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
