@@ -257,9 +257,9 @@ function createPublicationCard(publication) {
     readMoreBtn.addEventListener('click', function() {
         card.classList.toggle('expanded');
         if (card.classList.contains('expanded')) {
-            this.innerHTML = 'Read less <i class="fa fa-chevron-up"></i>';
+            this.innerHTML = '<i class="fa fa-chevron-up"></i>';
         } else {
-            this.innerHTML = 'Read more <i class="fa fa-chevron-down"></i>';
+            this.innerHTML = '<i class="fa fa-chevron-down"></i>';
             // Scroll back to the top of the card if it's collapsed
             card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
