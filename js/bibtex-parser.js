@@ -12,7 +12,7 @@ class BibtexParser {
         this.mdLinkRegex = /\[(.*?)\]\((.*?)\)/;
         
         // Debug flag
-        this.debug = true;
+        this.debug = false;
     }
 
     /**

@@ -76,40 +76,9 @@ async function loadPublicationData(pubInfo) {
             throw new Error(`No valid BibTeX entries found for ${folder}`);
         }
         
-        // Merge BibTeX data with publication data
-        Object.assign(publicationData, parsedPublications[0]);
-        
-        // 2. Try to load summary markdown if it exists
-        try {
-            const summaryResponse = await fetch(`publications/${folder}/summary.md`);
-            if (summaryResponse.ok) {
-                const summaryText = await summaryResponse.text();
-                const parsedSummary = parser.parseSummary(summaryText);
-                
-                // Add summary data to publication data
-                publicationData.summaryData = parsedSummary;
-                
-                // Extract key information from summary - Case insensitive check
-                if (parsedSummary.sections?.overview || parsedSummary.sections?.Overview) {
-                    publicationData.overview = (parsedSummary.sections.overview || parsedSummary.sections.Overview || []).join(' ');
-                }
-                
-                // Fix for key contributions case sensitivity
-                const contributionsKey = Object.keys(parsedSummary.sections || {})
-                    .find(key => key.toLowerCase() === 'key contributions');
-                
-                if (contributionsKey && parsedSummary.sections[contributionsKey]) {
-                    publicationData.contributions = parsedSummary.sections[contributionsKey];
-                }
-                
-                if (parsedSummary.resources && parsedSummary.resources.length > 0) {
-                    publicationData.resources = parsedSummary.resources;
-                }
-            }
-        } catch (e) {
-            console.log(`No summary found for ${folder} or error loading it:`, e);
-        }
-        
+        // Merge BibTeX data with publication data (abstract/links come from the manifest)
+        Object.assign(publicationData, parsedPublications[0], pubInfo);
+
         return publicationData;
     } catch (error) {
         console.error(`Error loading publication ${folder}:`, error);
@@ -135,10 +104,15 @@ function renderPublications(publications) {
     });
     
     // Render each publication card
-    publications.forEach(pub => {
+    const cards = publications.map(pub => {
         const card = createPublicationCard(pub);
         publicationGrid.appendChild(card);
+        return card;
     });
+
+    // Reveal cards (they start hidden via animations.js); done on the next
+    // frame so the fade-in transition plays for dynamically added cards.
+    requestAnimationFrame(() => cards.forEach(card => card.classList.add('visible')));
 }
 
 /**
@@ -163,17 +137,24 @@ function createPublicationCard(publication) {
     if (publication.type === 'journal') venueIcon = 'fa-book';
     else if (publication.type === 'conference') venueIcon = 'fa-microphone';
     
-    const venue = publication.journal || publication.booktitle || publication.publisher || 'Unknown Venue';
-    
-    // Get links if available
-    const journalLink = publication.links?.journal || 
-                       (publication.doi ? `https://doi.org/${publication.doi}` : '#');
-    const pdfLink = publication.links?.pdf || '#';
-    const codeLink = publication.links?.code || '#';
-    
-    // Build abstract or overview text
-    const abstractText = publication.overview || publication.abstract || 'No abstract available';
-    
+    const venue = publication.journal || publication.booktitle || publication.publisher || publication.school || 'Unknown Venue';
+
+    // Resolve links: DOI (original page), arXiv, and direct PDF
+    const doiLink = publication.doi || publication.links?.journal || '';
+    const arxivLink = publication.arxiv || '';
+    const pdfLink = publication.pdf || '';
+
+    // Build abstract text
+    const abstractText = publication.abstract || 'No abstract available';
+
+    // Action buttons in order: DOI, arXiv, PDF, BibTeX
+    const actionButtons = [
+        doiLink && `<a href="${doiLink}" class="pub-btn primary" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link"></i><span class="btn-tooltip">DOI</span></a>`,
+        arxivLink && `<a href="${arxivLink}" class="pub-btn" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-text-o"></i><span class="btn-tooltip">arXiv</span></a>`,
+        pdfLink && `<a href="${pdfLink}" class="pub-btn" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o"></i><span class="btn-tooltip">PDF</span></a>`,
+        `<a href="#" class="pub-btn copy-bibtex" data-bibtex="${encodeURIComponent(publication.rawBibtex || '')}"><i class="fa fa-quote-right"></i><span class="btn-tooltip">Copy BibTeX</span></a>`
+    ].filter(Boolean).join('');
+
     // Build HTML for the card
     card.innerHTML = `
         <div class="pub-top">
@@ -191,67 +172,19 @@ function createPublicationCard(publication) {
             <i class="fa fa-chevron-down"></i>
         </button>
         <div class="pub-actions">
-            <a href="${journalLink}" class="pub-btn primary" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-external-link"></i>
-            </a>
-            <a href="${pdfLink}" class="pub-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-file-pdf-o"></i>
-            </a>
-            <a href="${codeLink}" class="pub-btn" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-code"></i>
-            </a>
-            <a href="#" class="pub-btn copy-bibtex" data-bibtex="${encodeURIComponent(publication.rawBibtex || '')}">
-                <i class="fa fa-quote-right"></i>
-            </a>
+            ${actionButtons}
         </div>
     `;
-    
-    // Add key contributions if available
-    if (publication.contributions && publication.contributions.length > 0) {
-        const abstractDiv = card.querySelector('.pub-abstract');
-        const contributionsList = document.createElement('ul');
-        contributionsList.className = 'pub-contributions';
-        
-        publication.contributions.forEach(contribution => {
-            const item = document.createElement('li');
-            item.textContent = contribution;
-            contributionsList.appendChild(item);
-        });
-        
-        // Add a heading for contributions
-        const contributionsHeading = document.createElement('p');
-        contributionsHeading.className = 'contributions-heading';
-        contributionsHeading.innerHTML = '<strong>Key Contributions:</strong>';
-        
-        abstractDiv.appendChild(contributionsHeading);
-        abstractDiv.appendChild(contributionsList);
-    }
-    
-    // Add resources if available
-    if (publication.resources && publication.resources.length > 0) {
-        const pubActions = card.querySelector('.pub-actions');
-        
-        publication.resources.forEach(resource => {
-            const resourceLink = document.createElement('a');
-            resourceLink.href = resource.url;
-            resourceLink.className = 'pub-btn';
-            resourceLink.target = '_blank';
-            resourceLink.rel = 'noopener noreferrer';
-            
-            // Determine icon based on resource title
-            let icon = 'fa-link';
-            if (resource.title.toLowerCase().includes('slide')) icon = 'fa-desktop';
-            else if (resource.title.toLowerCase().includes('data')) icon = 'fa-database';
-            else if (resource.title.toLowerCase().includes('poster')) icon = 'fa-image';
-            else if (resource.title.toLowerCase().includes('video')) icon = 'fa-video-camera';
-            
-            // Use icon-only approach
-            resourceLink.innerHTML = `<i class="fa ${icon}"></i>`;
-            
-            pubActions.appendChild(resourceLink);
+
+    // Clicking the card (outside of buttons/links) opens the original DOI page
+    if (doiLink) {
+        card.classList.add('clickable');
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('a, button')) return;
+            window.open(doiLink, '_blank', 'noopener');
         });
     }
-    
+
     // Add event listener for Read More button
     const readMoreBtn = card.querySelector('.read-more-btn');
     readMoreBtn.addEventListener('click', function() {

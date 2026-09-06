@@ -1,74 +1,111 @@
 {
   "publications": [
     {
+      "folder": "2026_synthcharge",
+      "id": "lescrauwaet2026synthcharge",
+      "featured": false,
+      "abstract": "The rapid adoption of electric vehicles (EVs) creates an urgent need for realistic charging-session data to support infrastructure planning, yet real-world datasets are often limited by privacy constraints and sparse coverage. SynthCharge is a conditional denoising diffusion probabilistic model (CDDPM) that generates high-fidelity synthetic EV charging sessions, capturing the joint temporal and physical dependencies as well as the cross-attribute coupling between arrival times, plug-in duration, and charged energy."
+    },
+    {
       "folder": "2022_physics_informed_nn",
       "id": "gokhale2022physics",
-      "featured": true
+      "featured": true,
+      "arxiv": "https://arxiv.org/abs/2111.12066",
+      "pdf": "https://arxiv.org/pdf/2111.12066",
+      "abstract": "Accurate control-oriented building models are crucial for advanced controllers but hard to obtain. This work introduces physics-informed neural network architectures that combine the interpretability of building-physics models with the expressive power of neural networks, modelling room temperature, power consumption and the hidden thermal-mass state. The proposed models are more data-efficient and more accurate over longer prediction horizons than conventional neural networks."
     },
     {
       "folder": "2021_reinforcement_learning_ev",
       "id": "gokhale2021reinforcement",
-      "featured": false
+      "featured": false,
+      "doi": "https://www.preprints.org/manuscript/202103.0592/v1",
+      "pdf": "https://www.preprints.org/manuscript/202103.0592/v1/download",
+      "abstract": "This work coordinates the charging of an entire fleet of electric vehicles using a model-free, purely data-driven reinforcement learning approach based on fitted Q-iteration. A dueling neural network architecture is proposed to improve policy evaluation when many actions have similar values, and it is benchmarked against an all-knowing optimum and a standard FQI baseline."
     },
     {
       "folder": "2022_physq_framework",
       "id": "gokhale2022physq",
-      "featured": true
+      "featured": true,
+      "arxiv": "https://arxiv.org/abs/2211.11830",
+      "pdf": "https://arxiv.org/pdf/2211.11830",
+      "abstract": "PhysQ is a physics-informed reinforcement learning framework for residential building control that helps bridge the gap between model-based control and data-intensive reinforcement learning. By leveraging prior physics knowledge, PhysQ learns high-quality control policies using far fewer training samples than conventional RL, outperforming a business-as-usual strategy as well as a rudimentary model predictive controller."
     },
     {
       "folder": "2023_real_world_rl",
       "id": "gokhale2023realworld",
-      "featured": true
+      "featured": true,
+      "arxiv": "https://arxiv.org/abs/2310.19155",
+      "pdf": "https://arxiv.org/pdf/2310.19155",
+      "abstract": "This paper presents a real-life pilot study on aggregated control of residential buildings for grid-supporting services. A reinforcement learning approach coordinates the power consumption of eight households to jointly track a target power signal, relying solely on observed data without explicit building models. A four-week real-world case study demonstrates satisfactory power tracking using a hierarchical RL-based ranking system and real-time PI dispatch."
     },
     {
       "folder": "2023_transfer_learning",
       "id": "gokhale2023transfer",
-      "featured": false
+      "featured": false,
+      "arxiv": "https://arxiv.org/abs/2310.19159",
+      "pdf": "https://arxiv.org/pdf/2310.19159",
+      "abstract": "This work studies how transfer learning can improve day-ahead demand forecasting for home energy management systems. A temporal fusion transformer is trained on data from multiple households and then finetuned on a new household with only a few days of data, producing 24-hour forecasts at 15-minute resolution suitable for advanced controllers such as model predictive control."
     },
     {
       "folder": "2024_mcts_control",
       "id": "pavirani2024demand",
-      "featured": false
+      "featured": false,
+      "arxiv": "https://arxiv.org/abs/2312.03365",
+      "pdf": "https://arxiv.org/pdf/2312.03365",
+      "abstract": "This paper proposes a demand response controller for residential heating that limits energy consumption while respecting user thermal comfort, using Monte Carlo Tree Search (MCTS). A physics-informed neural network forecaster lets MCTS obtain higher rewards than a black-box model, reducing energy costs by around 4%."
     },
     {
       "folder": "2024_distill2explain",
       "id": "gokhale2024eenergy",
-      "featured": true
+      "featured": true,
+      "arxiv": "https://arxiv.org/abs/2403.11907",
+      "pdf": "https://arxiv.org/pdf/2403.11907",
+      "abstract": "This research explores how reinforcement learning policies can be made interpretable through the use of differentiable decision trees, focusing on optimizing energy usage in residential buildings while ensuring user comfort. It proposes a framework combining reinforcement learning with differentiable decision trees and analyses their interpretability and efficiency across different simulation environments."
     },
     {
       "folder": "2024_homelabgym",
       "id": "vanpuyvelde2024homelabgym",
-      "featured": false
+      "featured": false,
+      "doi": "https://doi.org/10.1145/3632775.3661974",
+      "arxiv": "https://arxiv.org/abs/2404.14110",
+      "pdf": "https://arxiv.org/pdf/2404.14110",
+      "abstract": "HomeLabGym is a real-world testbed that eases the evaluation of home energy management systems by following the OpenAI Gym paradigm. It lets researchers prototype, deploy and analyse HEMS controllers inside a real house (the IDLab HomeLab) through an easy-to-use Python interface that hides the complexity of sensor and appliance communication protocols."
     },
     {
       "folder": "2024_sample_efficient_rl",
       "id": "gokhale2024sample",
-      "featured": true
+      "featured": true,
+      "doi": "https://doi.org/10.1145/3632775.3661983",
+      "abstract": "This work improves the sample efficiency of reinforcement learning for building control by leveraging physics-informed latent representations. Physics-informed neural networks learn low-dimensional, physically meaningful state representations that can be combined with any standard RL algorithm to learn high-quality, interpretable control policies from limited data."
     },
     {
       "folder": "2024_control_policy_conference",
       "id": "karimimadahi2024control",
-      "featured": false
+      "featured": false,
+      "doi": "https://doi.org/10.1145/3632775.3661948",
+      "arxiv": "https://arxiv.org/abs/2404.18821",
+      "pdf": "https://arxiv.org/pdf/2404.18821",
+      "abstract": "This paper proposes a control-policy-correction framework for safe reinforcement learning-based energy arbitrage with batteries. The agent first optimizes arbitrage revenue and, in a post-processing step, the learned policy is corrected through a knowledge-distillation process to follow properties that match human intuition. The framework is evaluated on 2023 Belgian imbalance price data and deployed on a real battery."
     },
     {
       "folder": "2024_explainable_hems",
       "id": "gokhale2024explainable",
-      "featured": true
+      "featured": true,
+      "arxiv": "https://arxiv.org/abs/2403.11947",
+      "pdf": "https://arxiv.org/pdf/2403.11947",
+      "abstract": "This work presents an explainable home energy management system that combines the scalability of data-driven reinforcement learning with the interpretability of differentiable decision trees. The resulting controller manages household energy consumption while maintaining user comfort and remaining scalable across diverse houses."
     },
     {
       "folder": "2024_multisource_transfer",
       "id": "madahi2024multisource",
-      "featured": false
+      "featured": false,
+      "abstract": "This paper proposes a multi-source transfer learning framework to scale a reinforcement learning-based home battery controller to unseen households. A global RL agent is first trained on multiple source households and then finetuned on data from each target household, addressing the data-intensive training and scalability limitations of vanilla RL methods."
     },
     {
       "folder": "2024_phd_thesis",
       "id": "gokhale2024thesis",
-      "featured": true
-    },
-    {
-      "folder": "2024_deployable_control",
-      "id": "gokhale2024deployable",
-      "featured": false
+      "featured": true,
+      "abstract": "This doctoral dissertation develops deployable, data-driven control algorithms for residential demand response, centred on specialized, problem-specific neural architectures. It combines building physics with machine learning to obtain sample-efficient, interpretable and scalable controllers, validated in both simulation and real-world residential settings."
     }
   ]
 }
