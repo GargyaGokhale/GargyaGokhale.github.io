@@ -51,6 +51,10 @@
   height: auto; /* Expand to full height when expanded */
 }
 
+.publication-card.clickable {
+  cursor: pointer;
+}
+
 /* Card Header */
 .pub-top {
   display: flex;
