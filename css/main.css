@@ -1,27 +1,48 @@
 /* -------------------------------- Variables -------------------------------- */
 :root {
-    --primary-color: #2D4263;
-    --accent-color: #C84B31;
-    --bg-color: #f0f0f2;
-    --text-color: #191919;
-    --light-color: #F9F9F9;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* palette shared with prayogshala.me */
+    --primary-color: #243B53;
+    --primary-deep: #102A43;
+    --accent-color: #0F6E6E;
+    --bg-color: #F5F2EC;
+    --text-color: #273444;
+    --muted-color: #667085;
+    --light-color: #FBF9F5;
+    --border-color: rgba(36, 59, 83, 0.08);
+    --card-shadow: 0 10px 28px rgba(39, 52, 68, 0.05);
     --transition: all 0.3s ease;
   }
   
   /* -------------------------------- Global Styles -------------------------------- */
   body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(164, 177, 194, 0.16), transparent 35%),
+      linear-gradient(180deg, #f7f4ef 0%, #f1ede6 100%);
+    background-attachment: fixed;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* keep the footer at the bottom on short pages */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1 0 auto;
+    width: 100%;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.015em;
   }
   
   h1 {
@@ -41,7 +62,7 @@
   }
   
   p {
-    text-align: justify;
+    text-align: left;
     font-size: 1rem;
   }
   
@@ -57,10 +78,13 @@
   
   /* -------------------------------- Header -------------------------------- */
   header {
-    background-color: var(--light-color);
+    background-color: rgba(245, 242, 236, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border-color);
     color: var(--primary-color);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 24px rgba(39, 52, 68, 0.06);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -75,11 +99,15 @@
   }
   
   .logo a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
-    color: var(--primary-color);
+    letter-spacing: -0.02em;
+    color: var(--text-color);
     text-decoration: none;
+  }
+  
+  .logo a span {
+    color: var(--accent-color);
   }
   
   nav ul {
@@ -96,7 +124,8 @@
   
   nav a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--muted-color);
+    font-size: 0.95rem;
     font-weight: 500;
     position: relative;
     padding-bottom: 5px;
@@ -111,6 +140,10 @@
     left: 0;
     background-color: var(--accent-color);
     transition: width 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: var(--primary-deep);
   }
   
   nav a:hover::after {
@@ -173,7 +206,8 @@
   /* -------------------------------- Cards -------------------------------- */
   .card, .section-card, .publication-card, .blog-card {
     background-color: var(--light-color);
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
     box-shadow: var(--card-shadow);
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -184,7 +218,7 @@
   
   .card:hover, .section-card:hover, .publication-card:hover, .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 14px 32px rgba(39, 52, 68, 0.09);
   }
   
   .card.visible, .section-card.visible, .publication-card.visible, .blog-card.visible {
@@ -228,7 +262,7 @@
   }
   
   .btn.primary:hover, .pub-btn.primary:hover {
-    background-color: #22354d;
+    background-color: var(--primary-deep);
   }
   
   /* -------------------------------- Footer -------------------------------- */
